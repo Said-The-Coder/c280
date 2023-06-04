@@ -1,0 +1,59 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.11858271320689187 0.009092502564353249 -0.9929025463385664 2.9895974674747716
+  position 2.785625668681814 0.3453117493294196 0.7278315904292764
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 0.6
+  location 0.6 0 0
+}
+DEF SLOPE Solid {
+  translation 0 0 0.15
+  rotation 0 1 0 0.4
+  children [
+    Shape {
+      appearance OsbWood {
+        textureTransform TextureTransform {
+        }
+      }
+      geometry DEF BOX0 Box {
+        size 0.8 0.2 0.02
+      }
+    }
+  ]
+}
+Robot {
+  translation 0.286 0 0.286
+  rotation -0.14071421427757377 0.7071066044099185 0.6929644723217201 3.1
+  children [
+    Transform {
+      translation 0 0 0.041
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.109804 0.223529 0.333333
+            roughness 1
+            metalness 0
+          }
+          geometry DEF BODY Cylinder {
+            height 0.08
+            radius 0.045
+          }
+        }
+      ]
+    }
+    Altimeter {
+    }
+  ]
+  name "myBot"
+  contactMaterial "body"
+}
